@@ -1,20 +1,11 @@
- {% extends "layout.html" %}
- {% block title %} Register a User {% endblock %}
- {% block content %}
+{% extends "layout.html" %} {% block title %} Register a User {% endblock %} 
+{%block content %}
 
-    <section>
-    <h1>Users</h1>
-    {% for user in users %}
-        <article class="user">
-            <h2>
-            <a href= "{% url 'users:page' username=user.username %}">
-                {{ user.username }}
-            </a>
-            {{ user.username }}
-            </h2>
-            <p>{{ user.email }}</p>
-            <p>{{ user.date }}</p>
-        </article>
-    {% endfor%}
-    </section>
+<h1>Register Users</h1>
+<form class="form-with-validation" action="/users/register" method="post">
+  {% csrf_token %}
+  {{form}}
+  <button class="form-submit"type="submit">Register</button>
+</form>
+
 {% endblock %}
