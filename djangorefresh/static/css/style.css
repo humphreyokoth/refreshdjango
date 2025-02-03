@@ -3,14 +3,26 @@
     padding: 0;  
     box-sizing: border-box;
 }
-body{
+
+body {
     min-height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+main{
+    flex-grow: 1;
     display: grid;
     place-content: center;
-    font-size: 3rem;
-    background-color: black;
-    color: white;
 }
 h1,p{
     text-align: center;
 }
+
+a{
+    color: #81dbb8;
+    text-decoration: none;
+}
+
