@@ -3,7 +3,8 @@
 {{post.title}} 
 {% endblock %}
 {%block content %}
-<section>
+<sectio>
+    <img  class="banner" src="{{post.banner.url}}" alt="{{post.title}}"/> 
   <h1>{{post.title}}</h1> 
   <p>{{ post.date }}</p>
   <p>{{ post.body }}</p>
