@@ -17,7 +17,9 @@ def register_view(request):
 
 def login_view(request):
     if request.method == "POST":
-        return redirect('users:login')
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            return redirect('posts:list')
     else:
        form = AuthenticationForm()
     return render(request, 'users/login.html',{"form":form})
