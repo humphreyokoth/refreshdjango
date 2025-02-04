@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm ,AuthenticationForm
 
 # Create your views here.
 
@@ -16,5 +16,9 @@ def register_view(request):
     return render(request, 'users/register.html',{"form":form})
 
 def login_view(request):
-    return render(request, 'users/login.html')
+    if request.method == "POST":
+        return redirect('users:login')
+    else:
+       form = AuthenticationForm()
+    return render(request, 'users/login.html',{"form":form})
 
