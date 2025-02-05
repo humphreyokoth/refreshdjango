@@ -16,10 +16,10 @@
       <a href="{% url 'users:login'%}">Login</a> |
       <a href="{% url 'posts:new-post'%}">New Post</a> |
 
-      <form class = "logout" action="{% url 'users:logout'%}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-      </form>
+       <form class="logout" action="{% url 'users:logout'%}" method="post">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+        </form>
     </nav>
     <main>{% block content %} {% endblock %}</main>
   </body>
